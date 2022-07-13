@@ -20,9 +20,10 @@ public class QueryProcessor {
             String [] strings = query.split(" ");
             int result = Integer.parseInt(strings[strings.length - 1]) + Integer.parseInt(strings[strings.length - 3]);
             return "" + result;
-        // } else if (query.contains("largest")) {
-        //     String [] strings = query.split(" ");
-        // return "Nico";
+        } else if (query.contains("multiplied")) {
+            String [] strings = query.split(" ");
+            int result = Integer.parseInt(strings[strings.length - 1]) * Integer.parseInt(strings[strings.length - 4]);
+            return "" + result;
         // } else if (query.contains("name")) {
         // return "Nico";
         } else { // TODO extend the programm here
