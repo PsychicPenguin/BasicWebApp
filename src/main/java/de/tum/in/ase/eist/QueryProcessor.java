@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class QueryProcessor {
+    int highest;
 
     public String process(String query) {
 		query = query.toLowerCase();
@@ -33,7 +34,6 @@ public class QueryProcessor {
             for (int i = 0; i <= strings.length - 1; i++) {
                 numbers[i] = Integer.parseInt(strings[i]);
             }
-            int highest = 0;
             for (Integer integer : numbers) {
                 if(integer > highest) {
                     highest = integer;
