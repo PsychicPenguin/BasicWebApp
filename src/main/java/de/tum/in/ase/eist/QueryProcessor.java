@@ -1,6 +1,8 @@
 package de.tum.in.ase.eist;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -24,6 +26,20 @@ public class QueryProcessor {
             String [] strings = query.split(" ");
             int result = Integer.parseInt(strings[strings.length - 1]) * Integer.parseInt(strings[strings.length - 4]);
             return "" + result;
+        } else if (query.contains("largest")) {
+            String [] subsection = query.split(": ");
+            String [] strings = subsection[1].split(", ");
+            Integer [] numbers = new Integer[strings.length];
+            for (int i = 0; i <= strings.length - 1; i++) {
+                numbers[i] = Integer.parseInt(strings[i]);
+            }
+            int highest = 0;
+            for (Integer integer : numbers) {
+                if(integer > highest) {
+                    highest = integer;
+                }
+            }
+            return "" + highest;
         // } else if (query.contains("name")) {
         // return "Nico";
         } else { // TODO extend the programm here
